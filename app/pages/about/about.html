@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      组件
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="about">
+  <button block (click)="presentActionSheet()">Action Sheets</button>
+  <button outline (click)="basicAlert()">Basic Alerts</button>
+  <button outline (click)="showPrompt()">Prompt Alerts</button>
+  <button fab>FAB</button>
+
+  <button small outline (click)="showRadioAlert()">
+    Radio Alerts
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Fllowers
+    <ion-badge  item-right>260k</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="logo-google" item-left></ion-icon>
+    Follwers
+    <ion-badge  item-right secondary>200k</ion-badge>
+  </ion-item>
+</ion-content>
