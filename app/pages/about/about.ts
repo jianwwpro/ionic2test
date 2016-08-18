@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, ActionSheetController, AlertController} from 'ionic-angular';
+import {ViewController,NavController, ActionSheetController, AlertController, ModalController} from 'ionic-angular';
 
 
 @Component({
@@ -8,11 +8,15 @@ import {NavController, ActionSheetController, AlertController} from 'ionic-angul
 
 export class AboutPage {
 
+
   private testRadioOpen : any;
   private testReadioResult : any;
 
-  constructor(private actionSheetController: ActionSheetController,private alertController: AlertController) {
+  
+
+  constructor(private actionSheetController: ActionSheetController,private alertController: AlertController,private modalController: ModalController) {
     console.log("class load");
+    
   }
   onPageWillEnter(){
     console.log("page will load");
@@ -90,7 +94,9 @@ export class AboutPage {
     });
     prompt.present();
   }
-
+/**
+ * radio 弹出
+ */
   showRadioAlert(){
     
     let radioAlert = this.alertController.create();
@@ -118,4 +124,25 @@ export class AboutPage {
 
   }
 
+
+/**
+ * 打开modal框
+ */
+  showModal(){
+      let modalController = this.modalController.create(ModalPage);
+      modalController.present();
+  }
+}
+
+
+@Component({
+  templateUrl:'build/pages/about/modal-page.html'
+})
+export class ModalPage{
+  constructor(private view: ViewController){
+
+  }
+  dismiss(){
+    this.view.dismiss();
+  }
 }

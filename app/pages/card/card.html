@@ -10,7 +10,7 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="card-background-page">
     <!--基础card-->
     <ion-card>
         <ion-card-header>Card Header</ion-card-header>
@@ -58,4 +58,52 @@
             <p>Images often vary in size, so it is important that they adopt a consistent style throughout your app. Images can easily be added to cards. Adding an image to a card will give the image a constant width, and a variable height. Lists, headers, and other card components can easily be combined with image cards. To add an image to a card, use the following markup:</p>
         </ion-card-content>
     </ion-card>
+
+    <!--背景Card-->
+    <ion-card class="back-card">
+        <img src="https://www.baidu.com/img/2016_8_17chinabetter_3fdfb7e62eab01c73e39ee3e9751a0e5.gif" alt="">
+        <div class="card-title">Sao Paulo</div>
+        <div class="card-subtitle">41 Listings</div>
+    </ion-card>
+
+    <!--Social Cards-->
+    <ion-card>
+        <!--头部 头像-->
+        <ion-item>
+            <ion-avatar item-left><img src="http://e.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=249be29909f79052fb124f6c6d9abcaf/d009b3de9c82d158c880c83b800a19d8bc3e423d.jpg" alt=""></ion-avatar>
+            <h2 >Marty McFly</h2>
+            <p >November 5, 1955</p>
+        </ion-item>
+        
+        <!--中部图片-->
+        <img src="http://e.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=249be29909f79052fb124f6c6d9abcaf/d009b3de9c82d158c880c83b800a19d8bc3e423d.jpg" alt="">
+       
+        <!--内容-->
+        <ion-card-content>
+            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+
+        <!--底部一排-->
+        <ion-row>
+            <ion-col>
+                <button primary clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button primary clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>4 Commments</div>
+                </button>
+            </ion-col>
+            <ion-col center text-center>
+                <ion-note>
+                    22h ago
+                </ion-note>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    
 </ion-content>

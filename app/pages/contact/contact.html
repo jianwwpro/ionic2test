@@ -31,125 +31,20 @@
     </ion-item>
   </ion-list>-->
   <ion-list>
-    <ion-item>
-      王建武
-      <button outline danger item-right>
-        <!--<ion-icon name="add"></ion-icon>-->
-        已关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
+    
+    <ion-item *ngFor="let cantact of cantactList" (click)="openCantactDetail(cantact)">
+      <ion-avatar item-left>
+        <img src="build/img/1.jpg" alt="">
+      </ion-avatar>
+      <h2>
+        {{cantact.name}}
+      </h2>
+      <p>{{cantact.text}}</p>
       <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
+        <ion-icon name="add" *ngIf="!cantact.isFollow"></ion-icon>
+        <span >{{cantact.isFollow?'已关注':'关注'}}</span>
       </button>  
     </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
-     <ion-item>
-      王建武
-      <button outline item-right>
-        <ion-icon name="add"></ion-icon>
-        关注
-      </button>  
-    </ion-item>
+    
   </ion-list>
 </ion-content>
