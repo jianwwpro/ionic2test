@@ -1,0 +1,61 @@
+<ion-list radio-group class="popover-page" [(ngModel)]="fontFamily" (ionChange)="changeFontFamily()">
+    <ion-row>
+        <!--<ion-col>
+            <button (click)="changeFontSize('smaller')" ion-item detail-none class="text-button text-smaller">A</button>
+        </ion-col>
+        <ion-col>
+            <button (click)="changeFontSize('inherit')"  ion-item detail-none class="text-button text-inherit">A</button>
+        </ion-col>
+        <ion-col>
+            <button (click)="changeFontSize('larger')"  ion-item detail-none class="text-button text-larger">A</button>
+        </ion-col>-->
+        <ion-col>
+            <ion-range min='10' step="1" max="30" snaps="true" pin="true" [(ngModel)]="fontSize" (ionChange)="changeFontSizeByRange()">
+                <ion-label range-left class="small-text">A</ion-label>
+                <ion-label range-right class="large-text">A</ion-label>
+            </ion-range>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="row-dots">
+        <ion-col><button (click)="changeBackground('white')" category="dot" class="dot-white" [class.selected]="background == 'white'"></button></ion-col>
+        <ion-col><button (click)="changeBackground('tan')" category="dot" class="dot-tan" [class.selected]="background == 'tan'"></button></ion-col>
+        <ion-col><button (click)="changeBackground('grey')" category="dot" class="dot-grey" [class.selected]="background == 'grey'"></button></ion-col>
+        <ion-col><button (click)="changeBackground('black')" category="dot" class="dot-black" [class.selected]="background == 'black'"></button></ion-col>
+
+    </ion-row>
+   
+    <ion-item class="text-athelas">
+        <ion-label>Athelas</ion-label>
+        <ion-radio value="Athelas"></ion-radio>
+    </ion-item>
+    <ion-item class="text-charter">
+        <ion-label>Charter</ion-label>
+        <ion-radio value="Charter"></ion-radio>
+    </ion-item>
+    <ion-item class="text-weiruan">
+        <ion-label>微软雅黑</ion-label>
+        <ion-radio value="Microsoft YaHe"></ion-radio>
+    </ion-item>
+    <ion-item class="text-huaweisongti">
+        <ion-label>华文宋体</ion-label>
+        <ion-radio value="STSong"></ion-radio>
+    </ion-item>
+    <ion-item class="text-songti">
+        <ion-label>宋体</ion-label>
+        <ion-radio value="SimSun"></ion-radio>
+    </ion-item>
+    <ion-item class="text-huaweilishu">
+        <ion-label>华文隶书</ion-label>
+        <ion-radio value="STLiti"></ion-radio>
+    </ion-item>
+</ion-list>
+
+<style>
+    .small-text{
+        font-size:10px;
+    }
+    .large-text{
+        font-size:30px;
+    }
+</style>

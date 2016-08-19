@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {ViewController,NavController, ActionSheetController, AlertController, ModalController} from 'ionic-angular';
-
-
+import {PopoverController, ViewController,NavController, ActionSheetController, AlertController, ModalController} from 'ionic-angular';
+import { PopoverPage,PopoverHomePage } from './popover'
+import {SearchPage} from './search'
+import {SegmentPage} from './segment'
 @Component({
   templateUrl: 'build/pages/about/about.html'
 })
@@ -14,12 +15,18 @@ export class AboutPage {
 
   
 
-  constructor(private actionSheetController: ActionSheetController,private alertController: AlertController,private modalController: ModalController) {
+  constructor(private actionSheetController: ActionSheetController,private alertController: AlertController,private modalController: ModalController,private popoverController: PopoverController,private navController:NavController) {
     console.log("class load");
     
   }
   onPageWillEnter(){
     console.log("page will load");
+  }
+  presentSearch(){
+    this.navController.push(SearchPage);
+  }
+    presentSegment(){
+    this.navController.push(SegmentPage);
   }
 
 
@@ -131,6 +138,23 @@ export class AboutPage {
   showModal(){
       let modalController = this.modalController.create(ModalPage);
       modalController.present();
+  }
+  /**
+   * 弹出层设置字体，颜色等内容
+   */
+  presentPopover(e){
+    let popover = this.navController.push(PopoverHomePage)
+    
+  }
+   /**
+   * 弹出层设置字体，颜色等内容
+   */
+  tempPop(e){
+    let popover = this.popoverController.create(PopoverPage);
+    popover.present({
+      ev:e
+    })
+    
   }
 }
 

@@ -5,6 +5,8 @@ import {NavController, LoadingController,NavParams} from 'ionic-angular';
   templateUrl: 'build/pages/contact/contact.html'
 })
 export class ContactPage {
+
+  
   private cantactList : Array<{}>;
 
   constructor(private navCtrl: NavController,private loading : LoadingController) {
@@ -40,7 +42,10 @@ export class ContactPage {
   }
   
   openCantactDetail(contact){
-    this.navCtrl.push(ContactDetailPage,contact);
+    
+    this.navCtrl.push(ContactDetailPage,contact).then(()=>{
+      return this.navCtrl.push(ContactDetailPage,contact);
+    });
   }
   
 }

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+       <ion-title>宠物大世界</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <div padding>
+        <ion-segment [(ngModel)]="pet" (ionChange)="changeSegment()">
+            <ion-segment-button value="dog">汪星人</ion-segment-button>
+            <ion-segment-button value="cat">猫星人</ion-segment-button>
+            <ion-segment-button value="other">其他星球</ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase="'dog'">
+            <ion-item *ngFor="let d of dog">
+                <ion-thumbnail item-left>
+                    <img src="{{d.img}}" alt="">
+                </ion-thumbnail>
+                <h2>{{d.name}}</h2>
+                <p>阿萨德法师打发斯蒂芬</p>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'cat'">
+            <ion-item *ngFor="let d of cat">
+                <ion-thumbnail item-left>
+                    <img src="{{d.img}}" alt="">
+                </ion-thumbnail>
+                <h2>{{d.name}}</h2>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
